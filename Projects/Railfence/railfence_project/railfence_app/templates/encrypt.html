@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rail Fence Cipher - Encryption</title>
+</head>
+<body>
+    <h1>Rail Fence Cipher - Encryption</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="message">Enter the message:</label>
+        <input type="text" name="message" id="message" required><br>
+        <label for="key">Enter the key:</label>
+        <input type="number" name="key" id="key" required><br>
+        <button type="submit">Encrypt</button>
+    </form>
+    {% if encrypted_message %}
+    <h2>Encrypted Message:</h2>
+    <p>{{ encrypted_message }}</p>
+    <a href="{% url 'railfence_decrypt' %}" >Create a account</a>
+    {% endif %}
+    
+</body>
+</html>
